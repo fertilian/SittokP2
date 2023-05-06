@@ -30,38 +30,42 @@
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row">
+                    @if(Session::has('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ Session::get('success') }}
+                    
+                    </div>
+                    @endif
+
                     <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form action="register.php" method="POST" class="user">
-                        <input type="hidden" class="form-control" name="txt_id" placeholder="Masukkan Id">
-                         <div class="form-group">
+                            <form action="{{ route('register')}}" method="POST" class="user">
+                                @csrf
+                    <div class="form-group"> 
                       <label for="txt_user_email">Email</label>
-                      <input type="text" class="form-control" name="txt_user_email" placeholder="Masukkan Email">
+                      <input type="text" class="form-control" name="user_email" placeholder="Masukkan Email">
                     </div>
                     <div class="form-group">
                       <label for="txt_user_password">Password</label>
-                      <input type="password" class="form-control" name="txt_user_password" placeholder="Masukkan Password">
+                      <input type="password" class="form-control" name="user_password" placeholder="Masukkan Password">
                     </div>
                     <div class="form-group">
                       <label for="txt_user_fullname">Nama</label>
-                      <input type="text" class="form-control" name="txt_user_fullname" placeholder="Masukkan Nama">
-                    </div>
-                    <div class="form-group">
-                      <input type="hidden" class="form-control" name="txt_level" placeholder="Masukkan Level">
+                      <input type="text" class="form-control" name="user_fullname" placeholder="Masukkan Nama">
                     </div>
                     <div class="form-group">
                       <label for="txt_alamat">Alamat</label>
-                      <input type="text" class="form-control" name="txt_alamat" placeholder="Masukkan Alamat">
+                      <input type="text" class="form-control" name="alamat" placeholder="Masukkan Alamat">
                     </div>
                     <button type="submit" name="create" class="btn btn-primary">Submit</button>
                   </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="/login">Already have an account? Login!</a>
+                                <a class="small" href="login">Already have an account? Login!</a>
                             </div>
                         </div>
                     </div>

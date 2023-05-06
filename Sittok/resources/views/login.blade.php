@@ -52,7 +52,7 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Selamat Datang di Sittok!</h1>
                                     </div>
-                                    <form class="user" action="login.php" method="POST">
+                                    <form class="user" action="/login" method="POST">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="txt_email" aria-describedby="emailHelp"
