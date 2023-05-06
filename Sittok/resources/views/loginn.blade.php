@@ -52,15 +52,16 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Selamat Datang di Sittok!</h1>
                                     </div>
-                                    <form class="user" action="/login" method="POST">
+                                    <form class="user" action="{{ route('Admin.indexadmin')}}" method="POST">
+                                        @csrf
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="txt_email" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address" name="txt_email" autocomplete="off">
+                                                placeholder="Enter Email Address" name="user_email" autocomplete="off">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="txt_pass" placeholder="Password" name="txt_pass" autocomplete="off">
+                                                id="txt_pass" placeholder="Password" name="user_password" autocomplete="off">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">

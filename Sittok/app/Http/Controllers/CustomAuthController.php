@@ -30,5 +30,5 @@ class CustomAuthController extends Controller
         return back()->with('success', 'Register Berhasil');
     }
 
- 
+    
 }
