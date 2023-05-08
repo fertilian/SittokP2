@@ -20,7 +20,7 @@ class loginauthcontroller extends Controller
     {
         $credetials = [
             'user_email' => $request->user_email,
-            'user_password' => $request->user_password,
+            'password' => $request->user_password,
         ];
 
         if (Auth::attempt($credetials)) {

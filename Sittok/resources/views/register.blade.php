@@ -27,15 +27,12 @@
     <div class="container">
 
         <div class="card o-hidden border-0 shadow-lg" style="margin-top: 107px;">
+       
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
+               
                 <div class="row">
-                    @if(Session::has('success'))
-                    <div class="alert alert-success" role="alert">
-                        {{ Session::get('success') }}
                     
-                    </div>
-                    @endif
 
                     <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
                     <div class="col-lg-7">
@@ -46,6 +43,11 @@
                             <form action="{{ route('register')}}" method="POST" class="user">
                                 @csrf
                     <div class="form-group"> 
+                    @if(Session::has('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ Session::get('success') }}
+                    </div>
+                    @endif
                       <label for="txt_user_email">Email</label>
                       <input type="text" class="form-control" name="user_email" placeholder="Masukkan Email">
                     </div>
@@ -65,7 +67,7 @@
                   </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="login">Already have an account? Login!</a>
+                                <a class="small" href="/loginn">Already have an account? Login!</a>
                             </div>
                         </div>
                     </div>
