@@ -24,7 +24,6 @@
         <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Sittok</h6>
-            <a class="collapse-item" href="../Admin/carousel/list.php">Carousel</a>
             <a class="collapse-item" href="../Admin/barang/list.php">Barang</a>
             <a class="collapse-item" href="../Admin/kategori/list.php">Kategori</a>
             <a class="collapse-item" href="../Admin/customers/list.php">Customers</a>

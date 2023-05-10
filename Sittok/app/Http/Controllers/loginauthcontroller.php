@@ -19,13 +19,13 @@ class loginauthcontroller extends Controller
     public function loginPost(Request $request)
     {
         $request->validate([
-            'user_email' =>  'required',
+            'email' =>  'required',
             'password'  =>  'required'
         ]);
 
-        $credetials = $request->only('user_email', 'password');
+        $credetials = $request->only('email', 'password');
         if (Auth::attempt($credetials)) {
-            return redirect('/home')->with('success', 'Login Berhasil');
+            return redirect('Admin.indexadmin')->with('success', 'Login Berhasil');
 
         }return back()->with('error', 'Email or Password salah');
     }

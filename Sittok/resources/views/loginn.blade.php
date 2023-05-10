@@ -63,7 +63,7 @@
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="txt_email" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address" name="user_email" autocomplete="off">
+                                                placeholder="Enter Email Address" name="email" autocomplete="off">
                                         </div>
                                     
                                         <div class="form-group">
