@@ -53,7 +53,7 @@
                     </div>
                     <div class="form-group">
                       <label for="txt_user_password">Password</label>
-                      <input type="password" class="form-control" name="user_password" placeholder="Masukkan Password">
+                      <input type="password" class="form-control" name="password" placeholder="Masukkan Password">
                     </div>
                     <div class="form-group">
                       <label for="txt_user_fullname">Nama</label>
@@ -67,7 +67,7 @@
                   </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="/loginn">Already have an account? Login!</a>
+                                <a class="small" href="{{ route('loginn')}}">Already have an account? Login!</a>
                             </div>
                         </div>
                     </div>

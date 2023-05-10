@@ -52,16 +52,23 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Selamat Datang di Sittok!</h1>
                                     </div>
+                                    @if(Session::has('error'))
+                                    <div class="alert alert-danger" role="alert">
+                                        {{ Session::get('error') }}
+                                    </div>
+                                    @endif
                                     <form class="user" action="{{ route('loginn')}}" method="POST">
                                         @csrf
+
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="txt_email" aria-describedby="emailHelp"
                                                 placeholder="Enter Email Address" name="user_email" autocomplete="off">
                                         </div>
+                                    
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="txt_pass" placeholder="Password" name="user_password" autocomplete="off">
+                                                id="txt_pass" placeholder="Password" name="password" autocomplete="off">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -73,7 +80,7 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="/register">Create an Account!</a>
+                                        <a class="small" href="{{ route('register')}}">Create an Account!</a>
                                     </div>
                                 </div>
                             </div>
