@@ -29,3 +29,11 @@ Route::post('/loginn' , [loginauthcontroller::class, 'loginPost'])->name('loginn
 Route::get('/Admin/indexadmin', function () {
     return view('Admin.indexadmin');
 });
+
+Route::get('Admin/user/list', function () {
+    return view('Admin.user.list');
+});
+
+Route::get('Admin/jual/list', function () {
+    return view('Admin.jual.list');
+});
