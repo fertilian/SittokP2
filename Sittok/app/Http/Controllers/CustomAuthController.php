@@ -37,14 +37,19 @@ class CustomAuthController extends Controller
 
     public function loginPost(Request $request)
     {
-        $credetials = [
-            'email' => $request->email,
-            'password'  => $request->password,
-        ];
-
-        if (Auth::attempt($credetials)) {
-            return redirect('/home')->with('success', 'Login Berhasil');
-
-        }return back()->with('error', 'Email or Password salah');
-    }
-}
+        try {
+            $credentials = [
+                'email' => $request->email,
+                'password' => $request->password,
+            ];
+    
+            if (Auth::attempt($credentials)) {
+                return redirect('/home')->with('success', 'Login Berhasil');
+            } 
+            else {
+                throw new \Exception('Email or Password salah');
+            }
+        } catch (\Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
+    }}

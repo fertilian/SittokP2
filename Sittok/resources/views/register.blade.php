@@ -49,7 +49,7 @@
                     </div>
                     @endif
                       <label for="txt_user_email">Email</label>
-                      <input type="text" class="form-control" name="email" placeholder="Masukkan Email">
+                      <input type="email" class="form-control" name="email" placeholder="Masukkan Email">
                     </div>
                     <div class="form-group">
                       <label for="txt_user_password">Password</label>
