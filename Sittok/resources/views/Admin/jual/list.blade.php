@@ -87,28 +87,34 @@
                           <th>Total Harga</th>
                           <th>Status Pesanan</th>
                           <th>Bukti Pembayaran</th>
-                          <th>Hapus</th>
+                          <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
                         <form action="" method="post">
                           
                             <tr>
-                              
-                              <td>
-                                <input type="hidden" name="no_pesanan" value="">
-                                <select name="status_pesanan" class="drop-down-order">
-                                  <option value="" selected disabled></option>
-                                  <option value="Diproses">Ditolak</option>
-                                  <option value="Dikemas">Dikemas</option>
-                                  <option value="Dikirim">Dikirim</option>
-                                </select>
+                              <td class="align-middle">1</td>
+                              <td class="align-middle"></td>
+                              <td class="align-middle"></td> 
+                              <td class="align-middle"></td>
+                              <td class="align-middle"></td>
+                              <td class="align-middle"></td>
+                              <td class="align-middle">
+                                  <input type="hidden" name="no_pesanan" value="">
+                                  <select name="status_pesanan" class="drop-down-order">
+                                    <option value="" selected disabled></option>
+                                    <option value="Diproses">Ditolak</option>
+                                    <option value="Dikemas">Dikemas</option>
+                                    <option value="Dikirim">Dikirim</option>
+                                  </select>
                               </td>
-                              
                               <td>
                                 <div class="flex-btn">
                                   <input type="submit" value="update" class="btn-order" name="update_status">
                                 </div>
+                              </td>
+                              <td>
                                 <a onclick="return confirm('Anda Yakin Ingin Menghapus Y/N')" href="" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
                               </td>
 

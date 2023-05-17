@@ -30,5 +30,21 @@ class CustomAuthController extends Controller
         return back()->with('success', 'Register Berhasil');
     }
 
-    
+    public function loginn()
+    {
+         return view('loginn');
+    }
+
+    public function loginPost(Request $request)
+    {
+        $credetials = [
+            'email' => $request->email,
+            'password'  => $request->password,
+        ];
+
+        if (Auth::attempt($credetials)) {
+            return redirect('/home')->with('success', 'Login Berhasil');
+
+        }return back()->with('error', 'Email or Password salah');
+    }
 }

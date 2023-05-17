@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
-use App\Http\Controllers\loginauthcontroller;
+use App\Http\Controllers\UserController;
 use App\Models\User;
 
 /*
@@ -20,11 +20,14 @@ Route::get('/', function () {
     return view('loginn');
 });
 
-Route::get('/register' , [CustomAuthController::class, 'register'])->name('register');
-Route::post('/register' , [CustomAuthController::class, 'registerPost'])->name('register');
+Route::controller(CustomAuthController::class)->group(function () {
+    Route::get('register', 'register')->name('register');
+    Route::post('register', 'registerPost')->name('register');
 
-Route::get('/loginn' , [loginauthcontroller::class, 'loginn'])->name('loginn');
-Route::post('/loginn' , [loginauthcontroller::class, 'loginPost'])->name('loginn');
+    Route::get('loginn', 'loginn')->name('loginn');
+    Route::post('loginn', 'loginPost')->name('loginn');
+});
+
 
 Route::get('/Admin/indexadmin', function () {
     return view('Admin.indexadmin');
@@ -37,3 +40,5 @@ Route::get('Admin/user/list', function () {
 Route::get('Admin/jual/list', function () {
     return view('Admin.jual.list');
 });
+
+Route::resource('Admin/user/list', UserController::class);

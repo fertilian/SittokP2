@@ -92,17 +92,24 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                      @if($users->count() > 0)
+                                      @foreach($users as $user)
                                         <tr>
-                                          <td class="align-middle" >1</td>
-                                          <td class="align-middle">Ria</td>
-                                          <td class="align-middle">Riafara@gmail.com</td> 
-                                          <td class="align-middle">123</td>
+                                          <td class="align-middle">{{ $loop->iteration}}</td>
+                                          <td class="align-middle">{{ $user->user_fullname}}</td>
+                                          <td class="align-middle">{{ $user->email}}</td> 
+                                          <td class="align-middle">{{ $user->password}}</td>
                                           <td>
-                                            <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                                            <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                                            <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i>
+                                            <button type="button" class="btn btn-primary"><i class="fas fa-pen"></i></button>
+                                            <button href="" type="button" class="btn btn-danger"><i class="fas fa-trash"></i>
                                           </td>    
                                         </tr>
+                                      @endforeach
+                                      @else
+                                      <tr>
+                                        <td class="text-center" colspan="5">User not found</td>
+                                      </tr>
+                                      @endif
                                     </tbody>
                                 </table>
 
