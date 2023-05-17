@@ -57,9 +57,9 @@
                                         {{ Session::get('error') }}
                                     </div>
                                     @endif
-                                    <form class="user" action="{{ route('loginn')}}" method="POST">
+                                    <form class="user" action="{{ route('login')}}" method="POST">
                                         @csrf
-
+                                        
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="txt_email" aria-describedby="emailHelp"
