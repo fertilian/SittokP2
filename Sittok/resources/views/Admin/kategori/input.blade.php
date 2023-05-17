@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -19,7 +18,6 @@
   <div id="wrapper">
     <!-- Sidebar -->
     @include('Admin.sidebar')
- 
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
@@ -51,11 +49,29 @@
             </li>
             <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
-            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <img class="img-profile rounded-circle" src="../assets/img/boy.png" style="max-width: 60px">
-                
-            </a>
+                <img class="img-profile rounded-circle" src="img/boy.png" style="max-width: 60px">
+                <span class="ml-2 d-none d-lg-inline text-white small">Maman Ketoprak</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Profile
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Settings
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Activity Log
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="logoutadmin.php" onclick="return confirm('Apakah anda yakin ingin keluar dari halaman ini?')" 
+                                    class="dropdown-item">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>>Logout</a>
+              </div>
             </li>
           </ul>
         </nav>
@@ -64,7 +80,7 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Data User</h1>
+            <h1 class="h3 mb-0 text-gray-800">Data Master Kategori</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="./">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
@@ -77,45 +93,22 @@
             <div class="col-lg-12">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Data User</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Data Master Kategori</h6>            
                 </div>
                 <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Username</th>
-                                            <th>Email</th>
-                                            <th>Password</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                      @if($users->count() > 0)
-                                      @foreach($users as $user)
-                                        <tr>
-                                          <td class="align-middle">{{ $loop->iteration}}</td>
-                                          <td class="align-middle">{{ $user->user_fullname}}</td>
-                                          <td class="align-middle">{{ $user->email}}</td> 
-                                          <td class="align-middle">{{ $user->password}}</td>
-                                          <td>
-                                            <a href="Route" class="btn btn-primary btn-circle "><i class="fas fa-pen"></i></a>
-                                            <a onclick="return confirm('Anda Yakin Ingin Menghapus Y/N')" href="" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                                          </td> 
-                                        </tr>
-                                      @endforeach
-                                      @else
-                                      <tr>
-                                        <td class="text-center" colspan="5">User not found</td>
-                                      </tr>
-                                      @endif
-                                    </tbody>
-                                </table>
-
-                            </div>
-                        </div>
+                  <form action="{{ route('register')}}" method="POST" class="user">
+                  <!-- <input type="hidden" class="form-control" name="txt_id" placeholder="Masukkan Nama Kategori"> -->
+                    <div class="form-group">
+                      <label for="txt_nama">Nama Kategori</label>
+                      <input type="text" class="form-control" name="txt_nama" placeholder="Masukkan Nama Kategori">
+                    </div>
+                    <button type="submit" name="create" class="btn btn-primary">Submit</button>
+                  </form>
+                </div>
               </div>
+              
+
+            
         <!-- <Form Basic> -->
       </div>
     </div>

@@ -87,7 +87,7 @@
                           <th>Total Harga</th>
                           <th>Status Pesanan</th>
                           <th>Bukti Pembayaran</th>
-                          <th>Action</th>
+                          <th>Aksi</th>
                         </tr>
                       </thead>
                       <tbody>

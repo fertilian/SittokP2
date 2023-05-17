@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -19,7 +18,6 @@
   <div id="wrapper">
     <!-- Sidebar -->
     @include('Admin.sidebar')
- 
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
@@ -54,8 +52,7 @@
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="../assets/img/boy.png" style="max-width: 60px">
-                
-            </a>
+              </a>
             </li>
           </ul>
         </nav>
@@ -64,7 +61,7 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Data User</h1>
+            <h1 class="h3 mb-0 text-gray-800">Data Master Suppliers</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="./">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
@@ -77,39 +74,34 @@
             <div class="col-lg-12">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Data User</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Data Master Suppliers</h6>
+                  <a href ="input.php" class ="btn btn-outline-primary btn-xs mb-0">+</a>
                 </div>
                 <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>Username</th>
-                                            <th>Email</th>
-                                            <th>Password</th>
+                                        <th>Id</th>
+                                            <th>Nama</th>
+                                            <th>No Telp</th>
+                                            <th>Alamat</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      @if($users->count() > 0)
-                                      @foreach($users as $user)
                                         <tr>
-                                          <td class="align-middle">{{ $loop->iteration}}</td>
-                                          <td class="align-middle">{{ $user->user_fullname}}</td>
-                                          <td class="align-middle">{{ $user->email}}</td> 
-                                          <td class="align-middle">{{ $user->password}}</td>
-                                          <td>
-                                            <a href="Route" class="btn btn-primary btn-circle "><i class="fas fa-pen"></i></a>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                            <a href="" class="btn btn-primary btn-circle "><i class="fas fa-pen"></i></a>
                                             <a onclick="return confirm('Anda Yakin Ingin Menghapus Y/N')" href="" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                                          </td> 
+                                          
+                                            </td>
                                         </tr>
-                                      @endforeach
-                                      @else
-                                      <tr>
-                                        <td class="text-center" colspan="5">User not found</td>
-                                      </tr>
-                                      @endif
+                                      
                                     </tbody>
                                 </table>
 
@@ -120,7 +112,6 @@
       </div>
     </div>
   </div>
-
   <!-- Scroll to top -->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>

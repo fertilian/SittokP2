@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link href="img/logo/logo.png" rel="icon">
+  <link href="../assets/img/logo/logo.png" rel="icon">
   <title>SITTOK</title>
   <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -19,7 +19,6 @@
   <div id="wrapper">
     <!-- Sidebar -->
     @include('Admin.sidebar')
- 
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
@@ -55,7 +54,7 @@
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="../assets/img/boy.png" style="max-width: 60px">
                 
-            </a>
+              </a>
             </li>
           </ul>
         </nav>
@@ -64,7 +63,7 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Data User</h1>
+            <h1 class="h3 mb-0 text-gray-800">Data Master Kategori</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="./">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
@@ -77,7 +76,8 @@
             <div class="col-lg-12">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Data User</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Data Master Kategori</h6>
+                  <a href = "" class = "btn btn-outline-primary btn-xs mb-0">+</a>
                 </div>
                 <div class="card-body">
                             <div class="table-responsive">
@@ -85,31 +85,22 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Username</th>
-                                            <th>Email</th>
-                                            <th>Password</th>
+                                            <th>Nama Kategori</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      @if($users->count() > 0)
-                                      @foreach($users as $user)
+                                    
                                         <tr>
-                                          <td class="align-middle">{{ $loop->iteration}}</td>
-                                          <td class="align-middle">{{ $user->user_fullname}}</td>
-                                          <td class="align-middle">{{ $user->email}}</td> 
-                                          <td class="align-middle">{{ $user->password}}</td>
-                                          <td>
-                                            <a href="Route" class="btn btn-primary btn-circle "><i class="fas fa-pen"></i></a>
+                                            <td></td>
+                                            <td></td>
+                      
+                                            <td>
+                                            <a href="" class="btn btn-primary btn-circle "><i class="fas fa-pen"></i></a>
                                             <a onclick="return confirm('Anda Yakin Ingin Menghapus Y/N')" href="" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                                          </td> 
+                                            </td>
                                         </tr>
-                                      @endforeach
-                                      @else
-                                      <tr>
-                                        <td class="text-center" colspan="5">User not found</td>
-                                      </tr>
-                                      @endif
+                                      
                                     </tbody>
                                 </table>
 

@@ -42,3 +42,19 @@ Route::get('Admin/jual/list', function () {
 });
 
 Route::resource('Admin/user/list', UserController::class);
+
+Route::get('Admin/supplier/list', function () {
+    return view('Admin.supplier.list');
+});
+
+Route::get('Admin/kategori/list', function () {
+    return view('Admin.kategori.list');
+});
+
+Route::get('Admin/barang/list', function () {
+    return view('Admin.barang.list');
+});
+
+Route::get('Admin/customers/list', function () {
+    return view('Admin.customers.list');
+});
